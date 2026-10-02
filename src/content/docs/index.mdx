@@ -16,27 +16,28 @@ hero:
   #    variant: minimal
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
+import TeamCard from '../../components/TeamCard.astro';
 
 ## Our Team
 
-<CardGrid stagger>
-	<LinkCard title="Daniel Simbe">
+<CardGrid>
+	<TeamCard title="Daniel Simbe" href="https://github.com/Cheiivan">
 		FullStack and DevOps Engineer.
-	</LinkCard>
-	<LinkCard title="Anderson Tembe">
+	</TeamCard>
+	<TeamCard title="Anderson Tembe" href="https://github.com/Cheiivan">
 		FullStack Dev.
-	</LinkCard>
-	<LinkCard title="Giovanni Santos" href="https://github.com/Cheiivan">
+	</TeamCard>
+	<TeamCard title="Giovanni Santos" href="https://github.com/Cheiivan">
 		BackEnd and Architecture Engineer.
-	</LinkCard>
-	<LinkCard title="Felizardo Samuel">
+	</TeamCard>
+	<TeamCard title="Felizardo Samuel" href="https://github.com/Cheiivan">
 		QA Analyst and FrontEnd Dev.
-	</LinkCard>
-	<LinkCard title="Marcelo Junior">
+	</TeamCard>
+	<TeamCard title="Marcelo Junior" href="https://github.com/Cheiivan">
 		FrontEnd Dev.
-	</LinkCard>
-	<LinkCard title="Keegan Azevedo">
+	</TeamCard>
+	<TeamCard title="Keegan Azevedo" href="https://github.com/Cheiivan">
 		BackEnd Dev.
-	</LinkCard>
+	</TeamCard>
 </CardGrid>

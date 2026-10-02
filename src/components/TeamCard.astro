@@ -1,0 +1,91 @@
+---
+interface Props {
+	title: string;
+	href: string;
+	image?: string;
+	alt?: string;
+	target?: '_blank' | '_self' | '_parent' | '_top';
+}
+
+const { title, href, image, alt = `${title} profile photo`, target } = Astro.props;
+const imageSrc = image?.startsWith('/')
+	? `${import.meta.env.BASE_URL}${image.slice(1)}`
+	: image;
+const initials = title
+	.split(/\s+/)
+	.map((part) => part[0])
+	.slice(0, 2)
+	.join('')
+	.toUpperCase();
+---
+
+<a
+	class="team-card"
+	href={href}
+	target={target}
+	rel={target === '_blank' ? 'noreferrer' : undefined}
+>
+	{imageSrc ? (
+		<img class="avatar" src={imageSrc} alt={alt} loading="lazy" />
+	) : (
+		<span class="avatar avatar--fallback" aria-hidden="true">{initials}</span>
+	)}
+	<span class="content">
+		<strong>{title}</strong>
+		<span class="description"><slot /></span>
+	</span>
+</a>
+
+<style>
+	.team-card {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		height: 100%;
+		padding: 1rem;
+		color: var(--sl-color-white);
+		text-decoration: none;
+		background: var(--sl-color-gray-6);
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.5rem;
+		transition: border-color 150ms ease, transform 150ms ease;
+	}
+
+	.team-card:hover {
+		border-color: var(--sl-color-text-accent);
+		transform: translateY(-2px);
+	}
+
+	.team-card:focus-visible {
+		outline: 3px solid var(--sl-color-text-accent);
+		outline-offset: 3px;
+	}
+
+	.avatar {
+		flex: 0 0 auto;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	.avatar--fallback {
+		display: grid;
+		place-items: center;
+		color: var(--sl-color-white);
+		font-weight: 700;
+		background: var(--sl-color-accent-high);
+	}
+
+	.content {
+		display: grid;
+		gap: 0.25rem;
+		min-width: 0;
+	}
+
+	.description {
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-sm);
+		line-height: 1.5;
+	}
+</style>
