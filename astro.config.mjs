@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://Cheiivan.github.io',
-	base: '/apontaua',
+  	base: '/apontaUA-microsite',
 	
 	integrations: [
 		starlight({
