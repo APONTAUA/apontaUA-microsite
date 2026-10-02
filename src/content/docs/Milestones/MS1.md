@@ -7,4 +7,4 @@ Milestone 1 - 29/9/2026.
 
 ## Presentation
 
-- [MS1 presentation](/apresentacaoMS1.pdf)
+- [MS1 presentation](../../apresentacaoMS1.pdf)
