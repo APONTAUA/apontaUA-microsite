@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap');
+
+/* ApontaUA palette: orange / amber */
+
+/* Dark mode (Starlight default) */
+:root {
+	--sl-font: 'Inter', system-ui, sans-serif;
+	--sl-color-accent-low: #3a1a08;
+	--sl-color-accent: #f97316;
+	--sl-color-accent-high: #fed7aa;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #f1ece8;
+	--sl-color-gray-2: #cfc6bf;
+	--sl-color-gray-3: #a1958c;
+	--sl-color-gray-4: #5f554e;
+	--sl-color-gray-5: #3d3530;
+	--sl-color-gray-6: #29221e;
+	--sl-color-black: #1a1512;
+}
+
+/* Light mode */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #ffedd5;
+	--sl-color-accent: #c2410c;
+	--sl-color-accent-high: #7c2d12;
+	--sl-color-white: #1a1512;
+	--sl-color-gray-1: #29221e;
+	--sl-color-gray-2: #3d3530;
+	--sl-color-gray-3: #5f554e;
+	--sl-color-gray-4: #8c8178;
+	--sl-color-gray-5: #e4dcd5;
+	--sl-color-gray-6: #f6f1ec;
+	--sl-color-gray-7: #fbf8f5;
+	--sl-color-black: #ffffff;
+}
+
+/* Livelier built-in cards on doc pages */
+.sl-link-card,
+.card {
+	border-radius: 0.75rem !important;
+	transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.sl-link-card:hover,
+.card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 16px 32px -24px var(--sl-color-accent);
+}
+
+/* Title of each doc page */
+.content-panel h1#_top {
+	font-weight: 800;
+	letter-spacing: -0.02em;
+}
+
+/* Three-column grid used on the home page */
+.grid-3 {
+	display: grid;
+	gap: 1rem;
+}
+
+@media (min-width: 50rem) {
+	.grid-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.grid-3 > * {
+	margin: 0 !important;
+}
+
+.home-cards {
+	margin-top: 1.5rem;
+}
+
+/* The full-width home banner uses 100vw; avoid a sideways scrollbar */
+body {
+	overflow-x: clip;
+}
+
+/* Headings use Outfit */
+.sl-markdown-content :is(h1, h2, h3),
+.content-panel h1#_top {
+	font-family: 'Outfit', var(--sl-font);
+}

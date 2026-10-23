@@ -1,0 +1,58 @@
+---
+import logo from '../assets/logo.svg';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="mission reveal">
+	<img src={logo.src} alt="" width="72" height="72" />
+	<h2>{title}</h2>
+	<div class="text"><slot /></div>
+</section>
+
+<style>
+	.mission {
+		display: grid;
+		justify-items: center;
+		gap: 0.75rem;
+		margin-top: clamp(2.5rem, 6vw, 4rem);
+		padding: clamp(2rem, 5vw, 3.5rem) 1.5rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 1.5rem;
+		background: var(--sl-color-gray-6);
+		text-align: center;
+	}
+
+	/* Override Starlight's markdown spacing between siblings */
+	.mission.mission > * {
+		margin-block: 0;
+	}
+
+	img {
+		filter: drop-shadow(0 8px 24px rgb(249 115 22 / 0.45));
+	}
+
+	h2 {
+		border: 0;
+		color: var(--sl-color-white);
+		font-family: 'Outfit', var(--sl-font);
+		font-size: clamp(1.75rem, 4vw, 2.25rem);
+		font-weight: 700;
+	}
+
+	.text,
+	.text :global(p) {
+		margin: 0;
+	}
+
+	.text {
+		max-width: 36rem;
+		margin: 0;
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-lg);
+	}
+</style>

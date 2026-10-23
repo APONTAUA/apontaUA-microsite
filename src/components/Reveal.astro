@@ -1,0 +1,40 @@
+---
+// Fades in every `.reveal` element as it scrolls into view.
+---
+
+<script>
+	const items = document.querySelectorAll<HTMLElement>('.reveal');
+	const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	if (!reduced && 'IntersectionObserver' in window) {
+		document.documentElement.classList.add('reveal-ready');
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-visible');
+						observer.unobserve(entry.target);
+					}
+				}
+			},
+			{ threshold: 0.15 }
+		);
+		items.forEach((item, i) => {
+			item.style.transitionDelay = `${(i % 4) * 80}ms`;
+			observer.observe(item);
+		});
+	}
+</script>
+
+<style is:global>
+	.reveal-ready .reveal {
+		opacity: 0;
+		transform: translateY(24px);
+		transition: opacity 600ms ease, transform 600ms ease;
+	}
+
+	.reveal-ready .reveal.is-visible {
+		opacity: 1;
+		transform: none;
+	}
+</style>

@@ -48,12 +48,13 @@ const initials = title
 		background: var(--sl-color-gray-6);
 		border: 1px solid var(--sl-color-gray-5);
 		border-radius: 0.5rem;
-		transition: border-color 150ms ease, transform 150ms ease;
+		transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 	}
 
 	.team-card:hover {
 		border-color: var(--sl-color-text-accent);
-		transform: translateY(-2px);
+		transform: translateY(-3px);
+		box-shadow: 0 16px 32px -24px var(--sl-color-accent);
 	}
 
 	.team-card:focus-visible {
@@ -72,9 +73,9 @@ const initials = title
 	.avatar--fallback {
 		display: grid;
 		place-items: center;
-		color: var(--sl-color-white);
+		color: #fff;
 		font-weight: 700;
-		background: var(--sl-color-accent-high);
+		background: linear-gradient(135deg, #f97316, #c2410c);
 	}
 
 	.content {
