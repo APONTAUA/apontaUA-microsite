@@ -1,0 +1,79 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import type { ComponentProps } from 'astro/types';
+
+interface Props {
+	icon: ComponentProps<typeof Icon>['name'];
+	title: string;
+	href: string;
+}
+
+const { icon, title, href } = Astro.props;
+---
+
+<a class="home-card reveal" href={href}>
+	<span class="icon"><Icon name={icon} size="1.5rem" /></span>
+	<strong>{title}</strong>
+	<span class="text"><slot /></span>
+	<span class="more">Open <Icon name="right-arrow" size="1rem" /></span>
+</a>
+
+<style>
+	.home-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+		height: 100%;
+		padding: 1.5rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 1rem;
+		background: var(--sl-color-gray-6);
+		color: inherit;
+		text-decoration: none;
+		transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+	}
+
+	.home-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--sl-color-accent);
+		box-shadow: 0 18px 36px -24px var(--sl-color-accent);
+	}
+
+	.icon {
+		display: inline-grid;
+		place-items: center;
+		width: 2.75rem;
+		height: 2.75rem;
+		border-radius: 0.75rem;
+		background: var(--sl-color-accent-low);
+		color: var(--sl-color-text-accent);
+	}
+
+	strong {
+		margin-top: 0.4rem;
+		color: var(--sl-color-white);
+		font-family: 'Outfit', var(--sl-font);
+		font-size: var(--sl-text-xl);
+		font-weight: 600;
+	}
+
+	.text {
+		flex: 1;
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-sm);
+	}
+
+	.more {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		color: var(--sl-color-text-accent);
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+	}
+
+	.home-card:hover .more :global(svg) {
+		transform: translateX(3px);
+		transition: transform 200ms ease;
+	}
+</style>

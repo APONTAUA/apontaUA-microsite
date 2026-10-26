@@ -1,0 +1,18 @@
+---
+title: Team
+description: The team behind ApontaUA.
+---
+
+import { CardGrid } from '@astrojs/starlight/components';
+import TeamCard from '../../components/TeamCard.astro';
+import { team } from '../../data/team';
+
+## Members
+
+<CardGrid>
+	{team.map((member) => (
+		<TeamCard title={member.name} href={member.github}>
+			{member.role}
+		</TeamCard>
+	))}
+</CardGrid>

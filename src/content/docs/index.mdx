@@ -1,43 +1,40 @@
 ---
-title: ApontaUA
-description: Uma base de apontamentos colaborativa para estudantes e docentes da Universidade de Aveiro.
-# template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Study, Organised
+description: Study materials from DETI courses, gathered in one place.
+template: splash
 hero:
-  tagline: Conhecimento partilhado. Estudo mais organizado.
-  # image:
-    # file: ../../assets/houston.webp
-  #actions:
-  #  - text: Example Guide
-  #    link: /guides/example/
-  #    icon: right-arrow
-  #  - text: Read the Starlight docs
-  #    link: https://starlight.astro.build
-  #    icon: external
-  #    variant: minimal
+  title: Study, Organised
+  tagline: Past materials from DETI courses, gathered in one place.
+  actions:
+    - text: View the docs
+      link: /apontaUA-microsite/overview/
+    - text: Roadmap
+      link: /apontaUA-microsite/milestones/
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/APONTAUA
+      icon: external
+      variant: minimal
 ---
 
-import { CardGrid } from '@astrojs/starlight/components';
-import TeamCard from '../../components/TeamCard.astro';
+import Mission from '../../components/Mission.astro';
+import HomeCard from '../../components/HomeCard.astro';
+import Reveal from '../../components/Reveal.astro';
 
-## Our Team
+<Mission title="Our mission">
+	Make finding study materials faster than studying them.
+</Mission>
 
-<CardGrid>
-	<TeamCard title="Daniel Simbe" href="https://github.com/dani1244">
-		FullStack and DevOps Engineer.
-	</TeamCard>
-	<TeamCard title="Anderson Tembe" href="https://github.com/AndersonTembe">
-		FullStack Dev.
-	</TeamCard>
-	<TeamCard title="Giovanni Santos" href="https://github.com/Cheiivan">
-		BackEnd and Architecture Engineer.
-	</TeamCard>
-	<TeamCard title="Felizardo Samuel" href="https://github.com/Zardo171817">
-		QA Analyst and FrontEnd Dev.
-	</TeamCard>
-	<TeamCard title="Marcelo Junior" href="https://github.com/MarceloJunior016">
-		FrontEnd Dev.
-	</TeamCard>
-	<TeamCard title="Keegan Azevedo" href="https://github.com/KeeganAzevedo">
-		BackEnd Dev.
-	</TeamCard>
-</CardGrid>
+<div class="grid-3 home-cards">
+	<HomeCard icon="github" title="GitHub" href="https://github.com/APONTAUA">
+		The codebase and how the project is organised.
+	</HomeCard>
+	<HomeCard icon="open-book" title="Documentation" href="/apontaUA-microsite/overview/">
+		Project overview, milestones and deliverables.
+	</HomeCard>
+	<HomeCard icon="star" title="Team" href="/apontaUA-microsite/team/">
+		The people building ApontaUA.
+	</HomeCard>
+</div>
+
+<Reveal />

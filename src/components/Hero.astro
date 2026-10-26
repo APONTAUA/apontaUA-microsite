@@ -1,0 +1,218 @@
+---
+import { LinkButton } from '@astrojs/starlight/components';
+
+const { data } = Astro.locals.starlightRoute.entry;
+const { title = data.title, tagline, actions = [] } = data.hero || {};
+---
+
+<section class="hero-banner">
+	<div class="hero-inner">
+		<div class="hero-copy">
+			<h1 id="_top" data-page-title>{title}</h1>
+			{tagline && <p class="tagline" set:html={tagline} />}
+			<div class="actions">
+				{
+					actions.map(({ attrs: { class: className, ...attrs } = {}, icon, link: href, text, variant }) => (
+						<LinkButton {href} {variant} icon={icon?.name} class:list={[className]} {...attrs}>
+							{text}
+						</LinkButton>
+					))
+				}
+			</div>
+		</div>
+
+		<svg class="hero-art" viewBox="0 0 400 400" aria-hidden="true">
+			<circle class="ring" cx="200" cy="200" r="190" />
+			<circle class="ring" cx="200" cy="200" r="140" />
+			<circle class="ring ring-dashed" cx="200" cy="200" r="165" />
+			<g class="orbit">
+				<circle cx="200" cy="10" r="6" />
+				<circle cx="390" cy="200" r="4" />
+				<circle cx="60" cy="300" r="5" />
+			</g>
+			<g class="orbit orbit-slow">
+				<circle cx="200" cy="60" r="4" />
+				<circle cx="80" cy="130" r="3" />
+				<circle cx="320" cy="290" r="5" />
+			</g>
+			<g class="docs">
+				<rect class="doc doc-back" x="128" y="118" width="120" height="150" rx="14" transform="rotate(-10 188 193)" />
+				<rect class="doc doc-mid" x="160" y="128" width="120" height="150" rx="14" transform="rotate(8 220 203)" />
+				<g class="doc-front">
+					<rect class="doc" x="140" y="130" width="120" height="150" rx="14" />
+					<rect class="doc-tag" x="156" y="148" width="44" height="14" rx="7" />
+					<rect class="doc-line" x="156" y="176" width="88" height="7" rx="3.5" />
+					<rect class="doc-line" x="156" y="194" width="70" height="7" rx="3.5" />
+					<rect class="doc-line" x="156" y="212" width="80" height="7" rx="3.5" />
+					<rect class="doc-line" x="156" y="230" width="52" height="7" rx="3.5" />
+				</g>
+			</g>
+		</svg>
+	</div>
+</section>
+
+<style>
+	/* Full-width banner that breaks out of the splash content column */
+	.hero-banner {
+		width: 100vw;
+		margin-inline: calc(50% - 50vw);
+		margin-top: -1.5rem;
+		padding: clamp(3rem, 9vw, 7rem) var(--sl-content-pad-x);
+		border-radius: 0 0 1.5rem 1.5rem;
+		background:
+			radial-gradient(circle at 80% 20%, rgb(255 255 255 / 0.12), transparent 40%),
+			linear-gradient(135deg, #2a1206 0%, #7c2d12 45%, #ea580c 80%, #fb923c 100%);
+		color: #fff;
+	}
+
+	.hero-inner {
+		display: grid;
+		gap: 2.5rem;
+		align-items: center;
+		max-width: 72rem;
+		margin-inline: auto;
+	}
+
+	@media (min-width: 50rem) {
+		.hero-inner {
+			grid-template-columns: 1.3fr 1fr;
+		}
+
+		.hero-art {
+			width: min(100%, 22rem);
+		}
+	}
+
+	h1 {
+		margin: 0;
+		color: #fff;
+		font-family: 'Outfit', var(--sl-font);
+		font-size: clamp(2.75rem, 7vw, 4.5rem);
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: -0.03em;
+		animation: rise 0.7s ease both;
+	}
+
+	.tagline {
+		max-width: 28rem;
+		margin-top: 1rem;
+		color: rgb(255 255 255 / 0.85);
+		font-family: 'Outfit', var(--sl-font);
+		font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+		line-height: 1.45;
+		animation: rise 0.7s 0.1s ease both;
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.75rem 1rem;
+		margin-top: 2rem;
+		animation: rise 0.7s 0.2s ease both;
+	}
+
+	/* Buttons re-themed for the dark banner */
+	.actions :global(.sl-link-button) {
+		border-radius: 0.6rem;
+		font-weight: 600;
+	}
+
+	.actions :global(.sl-link-button.primary) {
+		background: #fff;
+		border-color: #fff;
+		color: #7c2d12;
+	}
+
+	.actions :global(.sl-link-button.secondary) {
+		background: rgb(255 255 255 / 0.1);
+		border-color: rgb(255 255 255 / 0.4);
+		color: #fff;
+	}
+
+	.actions :global(.sl-link-button.minimal) {
+		color: #fff;
+	}
+
+	.actions :global(.sl-link-button:hover) {
+		transform: translateY(-2px);
+	}
+
+	/* Illustration */
+	.hero-art {
+		width: min(70%, 22rem);
+		margin-inline: auto;
+		overflow: visible;
+	}
+
+	.ring {
+		fill: none;
+		stroke: rgb(255 255 255 / 0.12);
+		stroke-width: 1.5;
+	}
+
+	.ring-dashed {
+		stroke: rgb(255 255 255 / 0.25);
+		stroke-dasharray: 4 10;
+		transform-origin: 200px 200px;
+		animation: spin 60s linear infinite;
+	}
+
+	.orbit {
+		fill: #fff;
+		opacity: 0.8;
+		transform-origin: 200px 200px;
+		animation: spin 30s linear infinite;
+	}
+
+	.orbit-slow {
+		fill: #fed7aa;
+		animation-duration: 45s;
+		animation-direction: reverse;
+	}
+
+	.docs {
+		animation: float 6s ease-in-out infinite;
+	}
+
+	.doc {
+		fill: #fff;
+	}
+
+	.doc-back {
+		fill: rgb(255 255 255 / 0.35);
+	}
+
+	.doc-mid {
+		fill: rgb(255 255 255 / 0.6);
+	}
+
+	.doc-tag {
+		fill: #ea580c;
+	}
+
+	.doc-line {
+		fill: #e7ded6;
+	}
+
+	@keyframes rise {
+		from { opacity: 0; transform: translateY(14px); }
+		to { opacity: 1; transform: none; }
+	}
+
+	@keyframes float {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-10px); }
+	}
+
+	@keyframes spin {
+		to { transform: rotate(360deg); }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after {
+			animation: none !important;
+		}
+	}
+</style>

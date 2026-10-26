@@ -1,0 +1,67 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+import { team } from '../data/team';
+---
+
+<Default />
+
+<div class="site-footer">
+	<div>
+		<h2>More</h2>
+		<ul>
+			<li><a href="https://github.com/APONTAUA">GitHub</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2>Team</h2>
+		<ul>
+			{team.map((member) => <li><a href={member.github}>{member.name}</a></li>)}
+		</ul>
+	</div>
+	<p class="copyright">© {new Date().getFullYear()} ApontaUA · DETI · University of Aveiro</p>
+</div>
+
+<style>
+	.site-footer {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem 4rem;
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--sl-color-hairline);
+		font-size: var(--sl-text-sm);
+	}
+
+	h2 {
+		margin: 0 0 0.5rem;
+		color: var(--sl-color-white);
+		font-size: var(--sl-text-sm);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li + li {
+		margin-top: 0.25rem;
+	}
+
+	a {
+		color: var(--sl-color-gray-2);
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: var(--sl-color-text-accent);
+	}
+
+	.copyright {
+		flex-basis: 100%;
+		margin: 0;
+		color: var(--sl-color-gray-3);
+	}
+</style>

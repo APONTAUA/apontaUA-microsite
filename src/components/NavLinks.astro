@@ -1,0 +1,68 @@
+---
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const links = [
+	{ label: 'Overview', href: `${base}/overview/` },
+	{ label: 'Milestones', href: `${base}/milestones/` },
+	{ label: 'Team', href: `${base}/team/` },
+];
+const current = Astro.url.pathname;
+---
+
+<nav class="nav-links" aria-label="Main">
+	{
+		links.map((link) => (
+			<a href={link.href} aria-current={current.startsWith(link.href) ? 'page' : undefined}>
+				{link.label}
+			</a>
+		))
+	}
+</nav>
+<Default />
+
+<style>
+	.nav-links {
+		display: none;
+		gap: 1.5rem;
+		margin-inline-end: 0.5rem;
+	}
+
+	.nav-links a {
+		position: relative;
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	/* Animated underline */
+	.nav-links a::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -0.3rem;
+		width: 100%;
+		height: 2px;
+		background: var(--sl-color-accent);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 200ms ease;
+	}
+
+	.nav-links a:hover,
+	.nav-links a[aria-current='page'] {
+		color: var(--sl-color-white);
+	}
+
+	.nav-links a:hover::after,
+	.nav-links a[aria-current='page']::after {
+		transform: scaleX(1);
+	}
+
+	@media (min-width: 72rem) {
+		.nav-links {
+			display: flex;
+		}
+	}
+</style>
