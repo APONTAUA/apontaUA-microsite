@@ -25,6 +25,7 @@ export default defineConfig({
 					label: 'Project',
 					items: [
 						{ label: 'Overview', slug: 'overview' },
+						{ label: 'Product Concept', slug: 'product-concept' },
 						{ label: 'Team', slug: 'team' },
 					],
 				},

@@ -24,6 +24,7 @@ A single place where any DETI student finds, in a few clicks, what they need to 
 ## Site map
 
 - [Roadmap](/apontaUA-microsite/milestones/): milestones and deliverables for each phase.
+- [Product concept](/apontaUA-microsite/product-concept/): product vision, users, capabilities and open decisions.
 - [Meetings](/apontaUA-microsite/meetings/): team meeting notes.
 - [Results](/apontaUA-microsite/results/): final project results.
 - [Team](/apontaUA-microsite/team/): who we are.
