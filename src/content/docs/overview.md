@@ -5,10 +5,6 @@ sidebar:
   order: 0
 ---
 
-:::note
-This is a high-level overview. The scope and features are still being defined and will be detailed in each milestone's deliverables.
-:::
-
 ## Context
 
 ApontaUA is a platform that gathers, in a single place, study materials from past years of the courses at the Department of Electronics, Telecommunications and Informatics (DETI) of the University of Aveiro.
@@ -21,10 +17,12 @@ Past-year materials exist, but they are scattered across platforms and student g
 
 A single place where any DETI student finds, in a few clicks, what they need to study for a course.
 
-## Site map
+## Project documentation
 
-- [Roadmap](/apontaUA-microsite/milestones/): milestones and deliverables for each phase.
-- [Product concept](/apontaUA-microsite/product-concept/): product vision, users, capabilities and open decisions.
-- [Meetings](/apontaUA-microsite/meetings/): team meeting notes.
-- [Results](/apontaUA-microsite/results/): final project results.
-- [Team](/apontaUA-microsite/team/): who we are.
+The project is currently in **Semester 1 (2026/2027)**. The documentation follows its milestone structure: inception, elaboration and construction. Semester 2 material will be added when that phase begins.
+
+- [Semester 1 roadmap](/apontaUA-microsite/milestones/): milestones, progress and deliverables.
+- [Product concept](/apontaUA-microsite/product-concept/): vision, users, capabilities and initial scope.
+- [Team](/apontaUA-microsite/team/): project members.
+- [Meetings](/apontaUA-microsite/meetings/): meeting notes as they are published.
+- [Results](/apontaUA-microsite/results/): project outcomes, to be completed as work progresses.

@@ -6,3 +6,8 @@ export const team = [
 	{ name: 'Marcelo Junior', github: 'https://github.com/MarceloJunior016', role: 'FrontEnd Dev.' },
 	{ name: 'Keegan Azevedo', github: 'https://github.com/KeeganAzevedo', role: 'BackEnd Dev.' },
 ];
+
+export const advisors = [
+	{ name: 'João Paulo Barraca', role: 'Supervisor' },
+	{ name: 'Catarina Silva', role: 'Co-Supervisor' },
+];
