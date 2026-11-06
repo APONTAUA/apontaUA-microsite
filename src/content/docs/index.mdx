@@ -1,40 +1,43 @@
 ---
-title: Study, Organised
-description: Study materials from DETI courses, gathered in one place.
+title: ApontaUA
+description: A collaborative platform for discovering and sharing DETI study materials.
 template: splash
 hero:
-  title: Study, Organised
-  tagline: Past materials from DETI courses, gathered in one place.
+  title: ApontaUA
+  tagline: A collaborative home for academic knowledge at DETI.
   actions:
-    - text: View the docs
-      link: /apontaUA-microsite/overview/
-    - text: Roadmap
-      link: /apontaUA-microsite/milestones/
-      variant: secondary
+    - text: Explore Documentation
+      link: /apontaUA-microsite/docs/
     - text: GitHub
       link: https://github.com/APONTAUA
       icon: external
-      variant: minimal
+      variant: secondary
 ---
 
 import Mission from '../../components/Mission.astro';
 import HomeCard from '../../components/HomeCard.astro';
 import Reveal from '../../components/Reveal.astro';
 
-<Mission title="Our mission">
-	Make finding study materials faster than studying them.
+<Mission title="Knowledge, easier to find">
+	Study materials are dispersed across different sources, repeated effort is common, and there is no shared structure for organization and validation. ApontaUA proposes a collaborative system to centralize, organize, discover and improve academic documents for the DETI community.
 </Mission>
 
+## Explore the project
+
 <div class="grid-3 home-cards">
-	<HomeCard icon="github" title="GitHub" href="https://github.com/APONTAUA">
-		The codebase and how the project is organised.
+	<HomeCard icon="open-book" title="Documentation" href="/apontaUA-microsite/docs/">
+		Browse milestones, meeting notes and project deliverables.
 	</HomeCard>
-	<HomeCard icon="open-book" title="Documentation" href="/apontaUA-microsite/overview/">
-		Project overview, milestones and deliverables.
+	<HomeCard icon="document" title="Project Summary" href="/apontaUA-microsite/summary/">
+		Read the motivation, goals and proposed solution.
 	</HomeCard>
-	<HomeCard icon="star" title="Team" href="/apontaUA-microsite/team/">
-		The people building ApontaUA.
+	<HomeCard icon="people" title="Development Team" href="/apontaUA-microsite/team/">
+		Meet the students and project supervisors.
 	</HomeCard>
 </div>
+
+## Current phase
+
+The project is in **Semester 1 (2026/2027)**. [Follow the milestone roadmap](/apontaUA-microsite/milestones/) and explore the [API documentation status](/apontaUA-microsite/api-reference/).
 
 <Reveal />

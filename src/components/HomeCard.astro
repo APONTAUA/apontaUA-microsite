@@ -39,6 +39,11 @@ const { icon, title, href } = Astro.props;
 		box-shadow: 0 18px 36px -24px var(--sl-color-accent);
 	}
 
+	.home-card:focus-visible {
+		outline: 3px solid var(--sl-color-accent);
+		outline-offset: 3px;
+	}
+
 	.icon {
 		display: inline-grid;
 		place-items: center;

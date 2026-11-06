@@ -24,27 +24,30 @@ export default defineConfig({
 				{
 					label: 'Project',
 					items: [
+						{ label: 'Summary', slug: 'summary' },
 						{ label: 'Overview', slug: 'overview' },
 						{ label: 'Product Concept', slug: 'product-concept' },
 						{ label: 'Team', slug: 'team' },
+						{ label: 'API Reference', slug: 'api-reference' },
 					],
 				},
 				{
 					label: 'Milestones',
 					items: [
-						{ label: 'Roadmap', slug: 'milestones' },
+						{ label: 'Documentation', slug: 'docs' },
+						{ label: 'Milestones', slug: 'milestones' },
 						{
 							label: 'Semester 1',
 							items: [
 								{ label: 'MS1 - Inception', collapsed: true, badge: { text: 'Done', variant: 'success' }, items: [{ autogenerate: { directory: 'milestones/semester-1/ms1' } }] },
 								{ label: 'MS2 - Elaboration', badge: { text: 'WIP', variant: 'caution' }, items: [{ autogenerate: { directory: 'milestones/semester-1/ms2' } }] },
-								{ label: 'MS3 - Construction', collapsed: true, items: [{ autogenerate: { directory: 'milestones/semester-1/ms3' } }] },
+								{ label: 'MS3 - ApontaUA', collapsed: true, items: [{ autogenerate: { directory: 'milestones/semester-1/ms3' } }] },
 							],
 						},
 						{ label: 'Semester 2', collapsed: true, items: [{ autogenerate: { directory: 'milestones/semester-2' } }] },
 					],
 				},
-				{ label: 'Meetings', collapsed: true, items: [{ autogenerate: { directory: 'meetings' } }] },
+				{ label: 'Meetings', slug: 'meetings' },
 				{ label: 'Results', collapsed: true, items: [{ autogenerate: { directory: 'results' } }] },
 			],
 		}),

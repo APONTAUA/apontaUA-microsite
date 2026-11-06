@@ -3,8 +3,11 @@ title: Roadmap
 description: Project milestones across both semesters.
 ---
 
-import Timeline from '../../../components/Timeline.astro';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-The project follows a milestone-based plan over two semesters. Each milestone has its own deliverables.
+The project is organized into two semesters. The team is currently in Semester 1; Semester 2 will be documented when that phase begins.
 
-<Timeline />
+<CardGrid>
+	<LinkCard title="Semester 1" description="Inception, elaboration and the planned ApontaUA construction milestone." href="/apontaUA-microsite/milestones/semester-1/" />
+	<LinkCard title="Semester 2" description="Planned project phase; documentation will be added later." href="/apontaUA-microsite/milestones/semester-2/" />
+</CardGrid>

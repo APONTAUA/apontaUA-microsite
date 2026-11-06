@@ -5,8 +5,8 @@ sidebar:
   order: 0
 ---
 
-Minutes and summaries of meetings with the team and advisors.
+Meeting minutes will be listed here in chronological order when the team publishes them.
 
-:::caution[Work in progress]
-Content to be defined. This section will be updated during the milestone.
+:::note[No meeting minutes published]
+There are no meeting minutes in the repository at this time. No meeting dates, attendees, durations or discussion notes have been added without a source document.
 :::

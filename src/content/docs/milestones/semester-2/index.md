@@ -1,10 +1,10 @@
 ---
 title: Semester 2
-description: Second semester milestones.
+description: Planned project work for the second semester.
 sidebar:
   order: 0
 ---
 
-:::caution[Work in progress]
-Content to be defined. This section will be updated during the milestone.
+:::note[Planned]
+The team is currently in Semester 1. This section will be populated when the second semester begins.
 :::
