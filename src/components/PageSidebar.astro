@@ -1,0 +1,10 @@
+---
+import Default from '@astrojs/starlight/components/PageSidebar.astro';
+
+const { toc } = Astro.locals.starlightRoute;
+// Starlight includes a synthetic “Overview” link even on pages with no section headings.
+// Render the contextual navigation only when the page has at least one real heading.
+const hasSectionHeadings = toc?.items.some((item) => item.slug !== '_top') ?? false;
+---
+
+{hasSectionHeadings && <Default />}

@@ -13,10 +13,12 @@ export default defineConfig({
 			logo: { src: './src/assets/logo.svg' },
 			defaultLocale: 'root',
 			locales: { root: { label: 'English', lang: 'en' } },
+			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/APONTAUA' }],
 			customCss: ['./src/styles/custom.css'],
 			components: {
 				Hero: './src/components/Hero.astro',
+				PageSidebar: './src/components/PageSidebar.astro',
 				SocialIcons: './src/components/NavLinks.astro',
 				Footer: './src/components/Footer.astro',
 			},

@@ -3,26 +3,25 @@ title: Team
 description: The team behind ApontaUA.
 ---
 
-import { CardGrid } from '@astrojs/starlight/components';
 import TeamCard from '../../components/TeamCard.astro';
 import { advisors, team } from '../../data/team';
 
-## Our Team
+## Members
 
-<CardGrid>
+<div class="profile-grid profile-grid--members">
 	{team.map((member) => (
-		<TeamCard title={member.name} href={member.github}>
+		<TeamCard title={member.name} href={member.github} image={member.image}>
 			{member.role}
 		</TeamCard>
 	))}
-</CardGrid>
+</div>
+
 ## Project Advisors
 
-<CardGrid>
+<div class="profile-grid profile-grid--advisors">
 	{advisors.map((advisor) => (
-		<div class="advisor-card">
-			<strong>{advisor.name}</strong>
+		<TeamCard title={advisor.name} image={advisor.image}>
 			{advisor.role} · PEI Group 17
-		</div>
+		</TeamCard>
 	))}
-</CardGrid>
+</div>

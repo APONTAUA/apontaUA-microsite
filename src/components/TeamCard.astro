@@ -1,13 +1,14 @@
 ---
+import { Icon } from '@astrojs/starlight/components';
+
 interface Props {
 	title: string;
-	href: string;
+	href?: string;
 	image?: string;
 	alt?: string;
-	target?: '_blank' | '_self' | '_parent' | '_top';
 }
 
-const { title, href, image, alt = `${title} profile photo`, target } = Astro.props;
+const { title, href, image, alt = `${title} profile photo` } = Astro.props;
 const imageSrc = image?.startsWith('/')
 	? `${import.meta.env.BASE_URL}${image.slice(1)}`
 	: image;
@@ -19,53 +20,66 @@ const initials = title
 	.toUpperCase();
 ---
 
-<a
-	class="team-card"
-	href={href}
-	target={target}
-	rel={target === '_blank' ? 'noreferrer' : undefined}
->
-	{imageSrc ? (
-		<img class="avatar" src={imageSrc} alt={alt} loading="lazy" />
-	) : (
-		<span class="avatar avatar--fallback" aria-hidden="true">{initials}</span>
-	)}
-	<span class="content">
+<article class="team-card">
+	<div class="avatar-frame">
+		{imageSrc ? (
+			<img class="avatar" src={imageSrc} alt={alt} loading="lazy" />
+		) : (
+			<span class="avatar avatar--fallback" aria-hidden="true">{initials}</span>
+		)}
+	</div>
+	<div class="content">
 		<strong>{title}</strong>
 		<span class="description"><slot /></span>
-	</span>
-</a>
+	</div>
+	<div class="profile-links">
+		{href && (
+			<a class="profile-link" href={href} aria-label={`${title} on GitHub`}>
+				<Icon name="github" size="1.1rem" />
+			</a>
+		)}
+	</div>
+</article>
 
 <style>
 	.team-card {
-		display: flex;
-		align-items: center;
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		justify-items: center;
 		gap: 1rem;
-		height: 100%;
-		padding: 1rem;
-		color: var(--sl-color-white);
-		text-decoration: none;
-		background: var(--sl-color-gray-6);
+		min-width: 0;
+		min-height: 17rem;
+		padding: 1.25rem 1rem 1rem;
 		border: 1px solid var(--sl-color-gray-5);
-		border-radius: 0.875rem;
-		transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+		border-radius: 1rem;
+		background: var(--sl-color-gray-6);
+		color: var(--sl-color-white);
+		text-align: center;
+		transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 	}
 
 	.team-card:hover {
-		border-color: var(--sl-color-text-accent);
 		transform: translateY(-3px);
-		box-shadow: 0 16px 32px -24px var(--sl-color-accent);
+		border-color: var(--sl-color-text-accent);
+		box-shadow: 0 14px 26px -18px var(--sl-color-accent);
 	}
 
-	.team-card:focus-visible {
-		outline: 3px solid var(--sl-color-text-accent);
-		outline-offset: 3px;
+	.avatar-frame {
+		display: grid;
+		place-items: center;
+		width: 7.25rem;
+		aspect-ratio: 1;
+		padding: 0.2rem;
+		border: 2px solid var(--sl-color-accent-low);
+		border-radius: 50%;
+		background: var(--sl-color-gray-7);
+		box-shadow: 0 5px 12px rgb(0 0 0 / 0.16);
 	}
 
 	.avatar {
-		flex: 0 0 auto;
-		width: 4rem;
-		height: 4rem;
+		display: block;
+		width: 100%;
+		height: 100%;
 		border-radius: 50%;
 		object-fit: cover;
 	}
@@ -74,19 +88,62 @@ const initials = title
 		display: grid;
 		place-items: center;
 		color: #fff;
-		font-weight: 700;
-		background: linear-gradient(135deg, #60a5fa, #2563eb);
+		font-size: 1.5rem;
+		font-weight: 750;
+		background: linear-gradient(145deg, var(--aponta-action), var(--aponta-green-dark));
 	}
 
 	.content {
 		display: grid;
-		gap: 0.25rem;
+		align-content: start;
+		justify-items: center;
+		gap: 0.45rem;
+		width: 100%;
 		min-width: 0;
+		padding-top: 0.1rem;
+	}
+
+	strong {
+		color: var(--sl-color-white);
+		font-size: var(--sl-text-base);
+		font-weight: 700;
+		line-height: 1.35;
 	}
 
 	.description {
 		color: var(--sl-color-gray-2);
 		font-size: var(--sl-text-sm);
-		line-height: 1.5;
+		line-height: 1.45;
+	}
+
+	.profile-links {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		min-height: 2.5rem;
+		padding-top: 0.75rem;
+		border-top: 1px solid var(--sl-color-gray-5);
+	}
+
+	.profile-link {
+		display: grid;
+		place-items: center;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		background: var(--sl-color-accent-low);
+		color: var(--sl-color-text-accent);
+		transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+	}
+
+	.profile-link:hover {
+		transform: translateY(-2px);
+		background: var(--sl-color-accent);
+		color: var(--sl-color-text-invert);
+	}
+
+	.profile-link:focus-visible {
+		outline: 3px solid var(--sl-color-accent);
+		outline-offset: 3px;
 	}
 </style>
