@@ -1,0 +1,84 @@
+---
+title: Functional Requirements
+description: Working-draft functional requirements for ApontaUA, grouped as in the source document.
+sidebar_position: 6
+---
+
+import StaticLink from '@site/src/components/StaticLink';
+import RequirementTable from '@site/src/components/ms2/RequirementTable';
+import { functionalRequirements } from '@site/src/data/ms2/functionalRequirements';
+
+## Source status
+
+The entries below retain the requirement identifiers, source descriptions and priorities from the supplied MS2 working draft. **Must**, **Should** and **Could** priorities were provisional and do not by themselves establish final approval or implementation.
+
+## Requirement catalogue
+
+### 1. Authentication and Access
+
+<RequirementTable requirements={functionalRequirements[0].requirements} />
+
+### 2. Academic Structure and Discovery
+
+<RequirementTable requirements={functionalRequirements[1].requirements} />
+
+### 3. Material Submission and File Handling
+
+<RequirementTable requirements={functionalRequirements[2].requirements} />
+
+### 4. OCR and Text Extraction
+
+<RequirementTable requirements={functionalRequirements[3].requirements} />
+
+### 5. Duplicate and Similarity Detection
+
+<RequirementTable requirements={functionalRequirements[4].requirements} />
+
+### 6. Content Moderation and Reports
+
+<RequirementTable requirements={functionalRequirements[5].requirements} />
+
+### 7. Academic Validation and Delegation
+
+<RequirementTable requirements={functionalRequirements[6].requirements} />
+
+### 8. Comments and Interaction
+
+<RequirementTable requirements={functionalRequirements[7].requirements} />
+
+### 9. Version History
+
+<RequirementTable requirements={functionalRequirements[8].requirements} />
+
+### 10. Administration and Audit
+
+<RequirementTable requirements={functionalRequirements[9].requirements} />
+
+## Supported formats and scope notes
+
+The draft proposes PNG, JPG/JPEG, PDF, DOCX, PPTX, Markdown (`.md`) and XLSX. It says the original file should be preserved, while upload, preview, text extraction and in-platform editing are distinct capabilities. Legacy `.xls` is excluded unless explicitly approved. The requirements document is a working baseline for team and supervisor review.
+
+## Proposed moderation outcomes
+
+| Outcome | Proposed behaviour in the source draft |
+| --- | --- |
+| Approved | No meaningful evidence of a rule violation is detected; publication may proceed subject to duplicate detection and other workflows. |
+| Pending Review | Content is ambiguous, confidence is insufficient, context is missing or OCR quality prevents reliable assessment; keep unavailable publicly until reviewed. |
+| Blocked | A clearly defined prohibited category or technical/security rule matches with sufficiently strong evidence; prevent publication and explain why. |
+
+The moderation policy is explicitly a proposal to validate. The source recommends conservative, context-aware automated moderation, human review where evidence is ambiguous, and separating content moderation from academic validation. It also says not to block content solely for similarity, academic errors, quoted offensive language or technical terms.
+
+## Open decisions in the source draft
+
+- Upload size and per-format limits; whether `.xls` remains excluded.
+- OCR technology, confidence threshold and which OCR text requires user confirmation.
+- Similarity methods and thresholds, including false-positive evaluation.
+- Prohibited moderation categories, escalation, reconsideration and data retention.
+- Course-unit delegation boundaries, rejection reasons and validation after edits.
+- Which `Should` requirements fall within the MVP; privacy and retention rules.
+
+The source appendix counts **81 proposed functional requirements**. Priorities and the exact MVP boundary require review by the team and supervisors.
+
+## Original document
+
+<StaticLink to="/ms2/functional-requirements.pdf" target="_blank" rel="noopener noreferrer">Open or download the complete Functional Requirements PDF</StaticLink>.

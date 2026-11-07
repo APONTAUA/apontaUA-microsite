@@ -1,0 +1,83 @@
+---
+title: Non-Functional Requirements
+description: Working-draft quality requirements and unresolved performance and operations targets.
+sidebar_position: 7
+---
+
+import StaticLink from '@site/src/components/StaticLink';
+import RequirementTable from '@site/src/components/ms2/RequirementTable';
+import { nonFunctionalRequirements } from '@site/src/data/ms2/nonFunctionalRequirements';
+
+## Source status
+
+The entries below retain the requirement identifiers, source descriptions and priorities from the supplied MS2 working draft. **Must**, **Should** and **Could** priorities were provisional and do not by themselves establish final approval or implementation.
+
+## Requirement catalogue
+
+### 1. Security and Access Control
+
+<RequirementTable requirements={nonFunctionalRequirements[0].requirements} />
+
+### 2. Privacy and Data Protection
+
+<RequirementTable requirements={nonFunctionalRequirements[1].requirements} />
+
+### 3. Performance and Responsiveness
+
+<RequirementTable requirements={nonFunctionalRequirements[2].requirements} />
+
+### 4. Scalability and Capacity
+
+<RequirementTable requirements={nonFunctionalRequirements[3].requirements} />
+
+### 5. Reliability, Recovery and Data Integrity
+
+<RequirementTable requirements={nonFunctionalRequirements[4].requirements} />
+
+### 6. Usability
+
+<RequirementTable requirements={nonFunctionalRequirements[5].requirements} />
+
+### 7. Accessibility
+
+<RequirementTable requirements={nonFunctionalRequirements[6].requirements} />
+
+### 8. Compatibility and File Handling
+
+<RequirementTable requirements={nonFunctionalRequirements[7].requirements} />
+
+### 9. Maintainability and Testability
+
+<RequirementTable requirements={nonFunctionalRequirements[8].requirements} />
+
+### 10. OCR and Similarity Detection Quality
+
+<RequirementTable requirements={nonFunctionalRequirements[9].requirements} />
+
+### 11. Auditability
+
+<RequirementTable requirements={nonFunctionalRequirements[10].requirements} />
+
+### 12. Availability and Operations
+
+<RequirementTable requirements={nonFunctionalRequirements[11].requirements} />
+
+## Assumptions and limits stated in the source
+
+- Initial reference scenario: approximately **300 registered DETI users**. This is not a concurrent-user count.
+- The team must define concurrent users and expected document volume before load testing.
+- A formal uptime percentage is not fixed. NFR-50 asks for a documented objective and measurement approach before pilot use.
+- NFR-10 explicitly imposes no strict two-second response-time target at this stage; response times must be measured under a documented load scenario.
+- Accessibility, including WCAG 2.2 AA where applicable, must be validated; it is not reported as tested.
+
+## Proposed validation and test plan
+
+The source proposes load testing with a DETI-like dataset and a documented registered-user and concurrent-user scenario; measurement of search, metadata, upload and processing times; recovery tests that verify the original file remains intact; server-side authorization and file-validation tests; representative OCR and similarity evaluation (including false positives and false negatives); and an availability target after hosting and monitoring are selected.
+
+## Open decisions in the source
+
+Choose a measurable availability target and measurement window; define concurrency and pilot document volume; set performance objectives from early measurements; select and test supported browsers; agree retention/deletion periods; and define how accessibility checks will be validated. These remain unresolved in this working draft.
+
+## Original document
+
+<StaticLink to="/ms2/non-functional-requirements.pdf" target="_blank" rel="noopener noreferrer">Open or download the complete Non-Functional Requirements PDF</StaticLink>.

@@ -1,24 +1,76 @@
 ---
-title: MS2 - Elaboration
-description: Milestone 2 - elaboration phase.
+title: MS2 — Elaboration
+description: Requirements, evidence, modelling and proposed architecture from Milestone 2.
 sidebar_label: Overview
 sidebar_position: 0
 ---
 
-Elaboration phase: requirements, use cases, architecture and scope definition.
-
 import { CardGrid, LinkCard } from '@site/src/components/DocCard';
+import StaticLink from '@site/src/components/StaticLink';
+import StatCards from '@site/src/components/ms2/StatCards';
+
+## Introduction
+
+MS2 deepened the understanding of ApontaUA's requirements and established a proposed architectural baseline for future development. The work moved the project from the initial problem statement toward a more detailed account of user needs, existing approaches, functional expectations, domain concepts and technical direction.
+
+:::caution[Status of this material]
+The requirements and architecture below document analysis and design proposals from MS2. They do not mean that the described platform capabilities have been implemented. The functional and non-functional requirements are working drafts; priorities, policy details and MVP boundaries still require validation.
+:::
+
+## Objectives
+
+- Understand student and teacher needs in more detail.
+- Collect and analyse questionnaire responses.
+- Review related solutions and research.
+- Define proposed functional and non-functional requirements.
+- Identify actors and their goals.
+- Model system use cases and the domain.
+- Propose the system architecture and record its decisions.
+- Develop mockups to discuss the main interactions.
+
+## Results
+
+The MS2 materials supplied for this microsite include two questionnaires and their statistical analysis, a State of the Art report, functional and non-functional requirement drafts, a use-case diagram, a domain model, an Architecture Decision Report, Figma mockups and the MS2 presentation.
+
+<StatCards items={[
+  { value: '52', label: 'Student responses', note: 'Exploratory questionnaire sample' },
+  { value: '6', label: 'Teacher responses', note: 'Small sample; interpret cautiously' },
+  { value: '81', label: 'Proposed functional requirements', note: 'Working draft; priorities provisional' },
+  { value: '52', label: 'Proposed non-functional requirements', note: 'Includes open targets and validation work' },
+]} />
+
+The presentation is dated **13 October 2026** and identifies **20 October 2026** as the official M2 architecture validation date. The published source files include proposed designs and working drafts rather than evidence of a completed implementation.
+
+## Explore the MS2 work
 
 <CardGrid>
-	<LinkCard title="Deliverables" description="MS2 deliverables." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/deliverables/" />
-	<LinkCard title="Checkpoint 1" description="Mid-milestone progress check." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/checkpoint-1/" />
-	<LinkCard title="State of the Art" description="Analysis of existing solutions." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/state-of-the-art/" />
-	<LinkCard title="Requirements" description="Functional and non-functional requirements." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/requirements/" />
-	<LinkCard title="Use Cases" description="Actors and system use cases." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/use-cases/" />
-	<LinkCard title="Architecture" description="System architecture." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/architecture/" />
-	<LinkCard title="Domain Model" description="Domain entities and relationships." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/domain-model/" />
-	<LinkCard title="Dataset" description="Dataset documentation (pending)." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/dataset/" />
-	<LinkCard title="Risk Management" description="Risk identification and mitigation." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/risk-management/" />
-	<LinkCard title="Scope Definition" description="What is in and out of scope." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/scope-definition/" />
-	<LinkCard title="Mockups" description="User interface prototypes." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/mockups/" />
+  <LinkCard title="Requirements Elicitation" description="Questionnaire sources, samples and method." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/requirements-elicitation/" />
+  <LinkCard title="Statistical Analysis" description="Findings, sample caveats and response patterns." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/statistical-analysis/" />
+  <LinkCard title="State of the Art" description="Five existing approaches and their documented scope." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/state-of-the-art/" />
+  <LinkCard title="Actors" description="Roles described in the requirements and diagram." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/actors/" />
+  <LinkCard title="Use Cases" description="The supplied MS2 use-case diagram and its interactions." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/use-cases/" />
+  <LinkCard title="Functional Requirements" description="All 81 FR entries, grouped as in the source draft." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/functional-requirements/" />
+  <LinkCard title="Non-Functional Requirements" description="All 52 NFR entries and open measurement assumptions." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/non-functional-requirements/" />
+  <LinkCard title="System Architecture" description="Proposed components, principles and conditional choices." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/architecture/" />
+  <LinkCard title="Architecture Decisions" description="ADR-01 to ADR-12 with their MS2 status." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/architecture-decision-report/" />
+  <LinkCard title="Domain Model" description="The detailed model diagram supplied for MS2." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/domain-model/" />
+  <LinkCard title="Mockups" description="Purpose of the prototype and link to Figma." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/mockups/" />
+  <LinkCard title="MS2 Retrospective" description="What was produced, what went wrong and the responsibility assumed." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/retrospective/" />
+  <LinkCard title="Deliverables" description="Consult or download the supplied MS2 artefacts." href="/apontaUA-microsite/docs/milestones/semester-1/ms2/deliverables/" />
 </CardGrid>
+
+## Points to validate across source documents
+
+The source materials are preserved as MS2 artefacts. These differences are recorded here rather than silently harmonised:
+
+| Topic | What the supplied materials show | Validation needed |
+| --- | --- | --- |
+| Academic year | The elaboration guide cover refers to 2025–2026; the MS2 reports and presentation refer to 2026/2027. | Confirm the academic-year label for the guide and milestone. |
+| Actor model | The use-case diagram has Student, Teacher and Administrator. The functional-requirements draft also defines a Course Unit Responsible Teacher with unit-scoped delegation responsibilities. | Confirm whether the responsible teacher is a distinct actor or a specialised Teacher role. |
+| Academic validation | The diagram connects Teacher to academic validation. The presentation says the responsible course-unit lecturer defines criteria and makes the final decision, with peer feedback informing it. | Agree who may validate and how peer review relates to final approval. |
+| Domain model | The supplied domain diagram models `Note`, `Version`, `Rating`, `Report` and `MaterialRelation`; the presentation contains a simplified conceptual model using `Material`, `MaterialVersion` and `Review`. | Confirm which model is the intended baseline before implementation. |
+| NEI page review date | The State of the Art report says the public NEI page was reviewed on 11 October 2026; the presentation says 12 October 2026. | Confirm the date used in the final source record. |
+
+## Source documents
+
+The original files are available from the [MS2 deliverables catalogue](./deliverables.md). The <StaticLink to="/ms2/ms2-guidelines.pdf">elaboration guide</StaticLink> is provided as a reference document, not as a team-produced deliverable.
