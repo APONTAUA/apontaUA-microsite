@@ -1,0 +1,6 @@
+.main { width: min(100% - 2rem, 76rem); margin: 0 auto; padding-block: clamp(2rem, 5vw, 4rem); }
+.main h1 { margin-bottom: 2rem; text-align: center; font-size: clamp(2rem, 5vw, 3rem); }
+.main h2 { margin-block: 2rem 1rem; text-align: center; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr)); gap: 1.25rem; }
+.advisors { max-width: 54rem; margin-inline: auto; }
+@media (min-width: 72rem) { .members { grid-template-columns: repeat(6, minmax(0, 1fr)); } }

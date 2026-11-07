@@ -1,49 +1,37 @@
-# Starlight Starter Kit: Basics
+# ApontaUA Microsite
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Docusaurus documentation site for the ApontaUA project, deployed to GitHub Pages at <https://apontaua.github.io/apontaUA-microsite/>.
 
-```
-npm create astro@latest -- --template starlight
-```
+## Local development
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Requirements: Node.js 20 or newer.
 
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+```sh
+npm ci
+npm run start
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## Production build
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+```sh
+npm run build
+npm run serve
+```
 
-Static assets, like favicons, can be placed in the `public/` directory.
+## Documentation structure
 
-## 🧞 Commands
+- `docs/`: project overview, summary, milestones, meetings, results and API status.
+- `src/pages/`: homepage and Team page.
+- `src/components/`: React components used by the site and MDX documents.
+- `static/`: logo, original ApontaUA Hero illustration, MS1 presentation, meeting template and optional OpenAPI specs.
+- `sidebars.js`: hierarchical documentation navigation. Meeting pages in `docs/meetings/minutes/` are discovered automatically.
 
-All commands are run from the root of the project, from a terminal:
+When genuine OpenAPI JSON files are added to `static/openapi/`, Docusaurus exposes them through Scalar under `/api/<filename>`. No API endpoints are included until the backend specification exists.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Create a meeting page from the template with:
 
-## 👀 Want to learn more?
+```sh
+npm run new-meeting -- <number> <YYYY-MM-DD> "<author name>"
+```
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+The generator creates `docs/meetings/minutes/minute-NNN.md` and refuses to overwrite an existing page. Fill in the template only with details confirmed by the meeting record.

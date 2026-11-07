@@ -1,0 +1,9 @@
+---
+title: Personas and Actors
+description: MS1 deliverable status.
+sidebar_position: 18
+---
+
+**Infelizmente, este elemento não foi realizado durante esta milestone.**
+
+This deliverable was not produced or submitted as part of MS1 — Inception.
