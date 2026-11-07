@@ -1,0 +1,111 @@
+.scrollRegion {
+  max-width: 100%;
+  margin: 1rem 0 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--ifm-table-border-color);
+  border-radius: 0.75rem;
+  background: var(--ifm-background-surface-color);
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollRegion:focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+
+.table {
+  width: 100%;
+  min-width: 1120px;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.table th,
+.table td {
+  min-width: 15rem;
+  padding: 1rem;
+  vertical-align: top;
+  border-right: 1px solid var(--ifm-table-border-color);
+  border-bottom: 1px solid var(--ifm-table-border-color);
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-surface-color);
+  font-size: 0.95rem;
+}
+
+.table thead th:nth-child(1) { min-width: 12rem; }
+.table thead th:nth-child(2) { min-width: 30rem; }
+.table thead th:nth-child(3) { min-width: 22rem; }
+.table thead th:nth-child(4) { min-width: 22rem; }
+
+.table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--ifm-color-primary) 4%, var(--ifm-background-surface-color));
+}
+
+.table tbody tr:last-child > * { border-bottom: 0; }
+.table tr > *:last-child { border-right: 0; }
+
+.milestoneRow {
+  background: color-mix(in srgb, var(--ifm-color-primary) 10%, var(--ifm-background-surface-color)) !important;
+}
+
+.dateCell {
+  width: 12rem;
+  color: var(--ifm-font-color-base);
+  font-weight: 600;
+}
+
+.iteration {
+  display: block;
+  width: fit-content;
+  margin-bottom: 0.55rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  color: var(--ifm-color-primary-darkest);
+  background: color-mix(in srgb, var(--ifm-color-primary) 16%, var(--ifm-background-surface-color));
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.event {
+  display: block;
+  margin-top: 0.8rem;
+  padding: 0.55rem 0.65rem;
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: 0.25rem;
+  background: color-mix(in srgb, var(--ifm-color-primary) 10%, var(--ifm-background-surface-color));
+  font-size: 0.8rem;
+}
+
+.event strong,
+.event span { display: block; }
+
+.taskList {
+  margin: 0;
+  padding-left: 1.6rem;
+}
+
+.taskList li {
+  padding-left: 0.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.taskList li:last-child { margin-bottom: 0; }
+
+.owner { color: var(--ifm-color-emphasis-800); }
+.owner strong { color: var(--ifm-color-primary); }
+
+@media (max-width: 996px) {
+  .table { min-width: 1080px; }
+  .table th,
+  .table td { padding: 0.8rem; }
+}
