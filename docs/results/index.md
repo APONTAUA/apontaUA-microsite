@@ -18,7 +18,7 @@ The project presentation is the only artifact produced and submitted for MS1. Th
 
 ### MS2 — Elaboration
 
-MS2 documents are being developed. See the [MS2 documentation](/apontaUA-microsite/docs/milestones/semester-1/ms2/) for the material currently available.
+MS2 produced analysis and design artefacts. See the [MS2 documentation](/apontaUA-microsite/docs/milestones/semester-1/ms2/) for the deliverables and their working-draft or proposed status. This does not claim that the proposed platform capabilities are implemented.
 
 ## Semester 2
 

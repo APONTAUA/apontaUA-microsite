@@ -1,0 +1,5 @@
+.figure { margin: 1.5rem 0 2rem; padding: clamp(.5rem, 2vw, 1rem); border: 1px solid var(--ifm-color-emphasis-300); border-radius: 1rem; background: var(--ifm-card-background-color); box-shadow: var(--ifm-global-shadow-lw); }
+.zoomLink { display: block; width: 100%; overflow: auto; border-radius: .55rem; }
+.image { display: block; width: 100%; height: auto; margin: auto; }
+.figure figcaption { padding: .8rem .35rem .15rem; color: var(--ifm-font-color-secondary); font-size: .9rem; text-align: center; }
+.hint { color: var(--ifm-font-color-secondary); opacity: .85; }
