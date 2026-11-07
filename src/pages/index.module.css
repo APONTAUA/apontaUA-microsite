@@ -1,0 +1,4 @@
+.main { width: min(100% - 2rem, 76rem); margin: 0 auto; padding-bottom: 4rem; }
+.main section { margin-top: clamp(2rem, 5vw, 3.5rem); }
+.main section h2 { color: var(--ifm-heading-color); font-size: clamp(1.5rem, 3vw, 2rem); }
+.phaseLinks { display: flex; flex-wrap: wrap; gap: 1.25rem; }

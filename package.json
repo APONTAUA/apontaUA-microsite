@@ -1,20 +1,47 @@
 {
-  "name": "microsite",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "apontaua-microsite",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "start": "docusaurus start",
+    "dev": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "new-meeting": "node scripts/new-meeting.mjs"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.42.4",
-    "astro": "^7.2.10",
-    "sharp": "^0.35.3"
+    "@docusaurus/core": "3.9.1",
+    "@docusaurus/preset-classic": "3.9.1",
+    "@easyops-cn/docusaurus-search-local": "0.55.3",
+    "@mdx-js/react": "^3.0.0",
+    "@scalar/docusaurus": "^0.7.44",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
-  "allowScripts": {
-    "esbuild": true
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.9.1",
+    "@docusaurus/types": "3.9.1"
+  },
+  "engines": {
+    "node": ">=20.0"
+  },
+  "overrides": {
+    "@docusaurus/core": "$@docusaurus/core",
+    "@docusaurus/preset-classic": "$@docusaurus/preset-classic",
+    "@docusaurus/*": "3.9.1",
+    "webpack": "5.105.4",
+    "@docusaurus/plugin-content-docs": "3.9.1",
+    "@docusaurus/theme-common": "3.9.1",
+    "@docusaurus/theme-translations": "3.9.1",
+    "@docusaurus/utils": "3.9.1",
+    "@docusaurus/utils-common": "3.9.1",
+    "@docusaurus/utils-validation": "3.9.1",
+    "@docusaurus/types": "3.9.1",
+    "@docusaurus/mdx-loader": "3.9.1",
+    "@docusaurus/module-type-aliases": "3.9.1"
   }
 }

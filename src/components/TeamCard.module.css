@@ -1,0 +1,50 @@
+.card {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	justify-items: center;
+	gap: 1rem;
+	min-width: 0;
+	min-height: 17rem;
+	padding: 1.25rem 1rem 1rem;
+	border: 1px solid var(--ifm-color-emphasis-200);
+	border-radius: 1rem;
+	background: var(--ifm-card-background-color);
+	color: var(--ifm-font-color-base);
+	text-align: center;
+	transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.card:hover {
+	transform: translateY(-3px);
+	border-color: var(--ifm-color-primary);
+	box-shadow: 0 14px 26px -18px rgba(0, 0, 0, .2);
+}
+
+.avatarFrame {
+	display: grid;
+	place-items: center;
+	width: 7.25rem;
+	aspect-ratio: 1;
+	padding: 0.2rem;
+	border: 2px solid var(--ifm-color-primary-lightest);
+	border-radius: 50%;
+	background: var(--ifm-color-emphasis-100);
+	box-shadow: 0 5px 12px rgb(0 0 0 / 0.16);
+}
+
+.avatar { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.fallback { display: grid; place-items: center; background: linear-gradient(145deg, var(--ifm-color-primary), var(--ifm-color-primary-darkest)); color: #fff; font-size: 1.5rem; font-weight: 750; }
+.content { display: grid; align-content: start; justify-items: center; gap: 0.45rem; width: 100%; min-width: 0; }
+.content strong { color: var(--ifm-heading-color); font-size: 1rem; line-height: 1.35; }
+.role { color: var(--ifm-font-color-secondary); font-size: 0.9rem; line-height: 1.45; }
+.links { display: flex; justify-content: center; width: 100%; min-height: 2.5rem; padding-top: 0.75rem; border-top: 1px solid var(--ifm-color-emphasis-200); }
+.links a { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--ifm-color-primary-lightest); color: var(--ifm-color-primary-darkest); transition: background-color 160ms ease, color 160ms ease, transform 160ms ease; }
+.links a:hover { transform: translateY(-2px); background: var(--ifm-color-primary); color: #fff; }
+.links a:focus-visible { outline: 3px solid var(--ifm-color-primary); outline-offset: 3px; }
+.links svg { width: 1.1rem; height: 1.1rem; }
+
+:global([data-theme='dark']) .avatarFrame { border-color: var(--ifm-color-primary-dark); background: var(--ifm-color-emphasis-200); }
+:global([data-theme='dark']) .links a { background: var(--ifm-color-primary-darkest); color: var(--ifm-color-primary-lightest); }
+:global([data-theme='dark']) .links a:hover { background: var(--ifm-color-primary); color: #fff; }
+
+@media (prefers-reduced-motion: reduce) { .card, .links a { transition: none; } .card:hover, .links a:hover { transform: none; } }
