@@ -1,15 +1,7 @@
 ---
-title: Meetings
-description: Team meeting notes.
+title: Reuniões
+description: Atas das reuniões da equipa ApontaUA.
 sidebar_position: 0
 ---
 
-import StaticLink from '@site/src/components/StaticLink';
-
-Meeting minutes are organized individually under **Minutes** in the sidebar. Each page records its date, author, participants, topics, summary, notes and action items.
-
-:::note[No meeting minutes published]
-There are no meeting minutes in the repository at this time. No meeting dates, attendees, durations or discussion notes have been added without a source document.
-:::
-
-Use the <StaticLink to="/templates/meeting-template.md">meeting minutes template</StaticLink> when recording a meeting. Only add details confirmed by the meeting record.
+As atas são apresentadas individualmente e por ordem numérica. Cada uma segue a mesma estrutura: informação da reunião, participantes, agenda, discussão, ações a realizar e notas adicionais. Os nomes, decisões e prazos são registados conforme constam nas respetivas fontes; informação não confirmada é identificada como tal.
