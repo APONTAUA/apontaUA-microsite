@@ -1,43 +1,52 @@
 ---
-title: "Meeting {{NUMBER}}"
-description: "Meeting minutes for {{DATE}}."
+title: "Minuta {{NUMBER}}"
+description: "Ata da reunião de {{DATE}}."
 date: "{{DATE}}"
 authors: [{{AUTHOR}}]
 sidebar_position: {{ORDER}}
 ---
 
-## Meeting details
+## Informação da reunião
 
-| Date | Duration | Method |
+**Data e hora:** {{DATE}}, indicar horário confirmado
+
+**Objetivo:** Indicar o objetivo confirmado da reunião.
+
+**Local:** Indicar local ou plataforma confirmados.
+
+**Responsável pela ata:** {{AUTHOR}}
+
+## Participantes
+
+Registar apenas participantes confirmados pela fonte.
+
+**Presentes:**
+
+- Nome
+
+**Ausentes:**
+
+- Nome — motivo, apenas se confirmado
+
+## Pontos da agenda
+
+| Ponto | Descrição |
+| --- | --- |
+| Indicar ponto confirmado | Descrever o ponto da agenda. |
+
+## Pontos discutidos
+
+| Ponto | Participantes na discussão | Notas |
 | --- | --- | --- |
-| {{DATE}} | Add confirmed start and end times | In person / Online / Hybrid |
+| Indicar ponto confirmado | Nomes ou grupo, conforme a fonte | Registar o que foi discutido ou decidido. |
 
-## Participants
+## Ações a realizar
 
-List only participants confirmed by the meeting record.
+| Estado | Ação | Responsável | Prazo |
+| --- | --- | --- | --- |
+| Por confirmar | Indicar ação acordada ou acompanhamento explicitamente identificado. | Responsável confirmado ou “A definir” | Prazo confirmado ou “Não indicado” |
 
-### Team members
+## Outras notas e informações
 
-- Name — present / absent
-
-### Supervisors
-
-- Name — present / absent
-
-## Topics discussed
-
-- Add confirmed topics.
-
-## Summary
-
-- Add the key points recorded during the meeting.
-
-## Notes
-
-- Add relevant notes, or remove this section if there are none.
-
-## Action items
-
-| Action | Owner | Due date |
-| --- | --- | --- |
-| Add an agreed action | Assigned person | YYYY-MM-DD |
+- Registar informação contextual relevante que não esteja acima.
+- Se não houver ações formais, declarar isso e distinguir eventuais acompanhamentos sugeridos.
