@@ -5,10 +5,11 @@ sidebar_label: Overview
 sidebar_position: 0
 ---
 
-MS3 is organized around three pillars. The pages below establish the documentation structure; detailed documents and results will be added when they are available.
+MS3 documentation reúne os três pilares definidos no guião oficial e os artefactos de engenharia consolidados para esta milestone. Os documentos de requisitos preservam os identificadores de referência; itens sem evidência permanecem assinalados como pendentes.
 
 import { CardGrid, LinkCard } from '@site/src/components/DocCard';
 import ActivityPlanTable from '@site/src/components/ms3/ActivityPlanTable';
+import StaticLink from '@site/src/components/StaticLink';
 
 <CardGrid>
 	<LinkCard title="Legal Requirements" description="RGPD, licensing, intellectual property, sector regulations, and terms and conditions." href="/apontaUA-microsite/docs/milestones/semester-1/ms3/legal-requirements/" />
@@ -21,3 +22,23 @@ import ActivityPlanTable from '@site/src/components/ms3/ActivityPlanTable';
 > **Planning note:** This activity calendar is being consolidated as part of the ApontaUA project-management restructuring associated with Milestone 3 (MS3). The team recognizes that iteration-level planning, task ownership and expected deliverables should have been organized and tracked consistently during the previous iterations. This calendar formalizes that practice, bringing together the work plan that was previously scattered across project-management documents. It should be used as the reference for coordinating and monitoring the remaining work.
 
 <ActivityPlanTable />
+
+## Auditoria e especificações consolidadas
+
+- [Relatório de auditoria documental MS3](../../../audit/Relatorio_Auditoria_Documental_MS3.md): inventário, implementação verificada, comparação com o guião e lacunas.
+- [Relatório de inconsistências e decisões pendentes](../../../audit/Relatorio_Inconsistencias_e_Decisoes_Pendentes.md).
+- [Requisitos Funcionais (RF-001 a RF-100)](../../../requirements/Requisitos_Funcionais.md).
+- [Regras de Negócio (RN-001 a RN-140)](../../../requirements/Regras_de_Negocio.md).
+- [Requisitos Não Funcionais (NFR v2.0)](../../../requirements/Requisitos_Nao_Funcionais.md).
+- [Modelo de domínio](domain-model.md) e [casos de uso](use-cases.md).
+- <StaticLink to="/ms3/documents/Matriz_Rastreabilidade.xlsx">Matriz de rastreabilidade (XLSX)</StaticLink>.
+
+> A direção de autenticação é WSO2 integrado com o IdP da Universidade de Aveiro. A Minuta 05 regista o pedido do token aos STIC através do orientador como ação da equipa; OIDC é o protocolo pretendido. O token/configuração ainda não estão demonstrados como concluídos no código auditado. A arquitetura substitui a proposta histórica de Keycloak.
+
+### Documentos DOCX
+
+<StaticLink to="/ms3/documents/Relatorio_Auditoria_Documental_MS3.docx">Auditoria</StaticLink> · <StaticLink to="/ms3/documents/Requisitos_Funcionais.docx">Requisitos Funcionais</StaticLink> · <StaticLink to="/ms3/documents/Regras_de_Negocio.docx">Regras de Negócio</StaticLink> · <StaticLink to="/ms3/documents/Requisitos_Nao_Funcionais.docx">Requisitos Não Funcionais</StaticLink> · <StaticLink to="/ms3/documents/Modelo_Dominio.docx">Modelo de Domínio</StaticLink> · <StaticLink to="/ms3/documents/Casos_de_Uso.docx">Casos de Uso</StaticLink> · <StaticLink to="/ms3/documents/Logica_de_Negocio.docx">Lógica de Negócio</StaticLink> · <StaticLink to="/ms3/documents/Relatorio_Inconsistencias_e_Decisoes_Pendentes.docx">Inconsistências</StaticLink>
+
+### Fontes MS3
+
+<StaticLink to="/ms3/source/Arquitetura_ApontaUa.drawio.png">Diagrama de arquitetura recebido (PNG)</StaticLink>
