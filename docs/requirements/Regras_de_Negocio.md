@@ -1,7 +1,3 @@
-> Consolidação enquadrada pela MS3 e pela arquitetura WSO2 + IdP UA. Mantêm-se os 140 IDs RN-001…RN-140. Regras de OCR, extração de texto e similaridade correspondem à evolução do segundo semestre, fora do MVP.
->
-> **Ação MS3 para autenticação:** enviar pedido expresso ao orientador para encaminhamento aos STIC e solicitar o token de permissão. A Minuta 05 regista a ação como por fazer. O protocolo OIDC é pretendido, mas endpoints, atributos e regras de sessão devem seguir a configuração confirmada pelos STIC.
-
 # ApontaUA — Business Rules
 
 **Version:** 1.1  

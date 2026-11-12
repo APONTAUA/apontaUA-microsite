@@ -1,33 +1,10 @@
-> Requisitos NFR v2.0 (73 IDs) enquadrados pela arquitetura MS3. A equipa solicitará o token necessário aos STIC através do orientador; OIDC é o protocolo pretendido. O token e parâmetros técnicos ainda não estão registados como obtidos/configurados. O texto normativo de origem é preservado.
+# ApontaUA — Non-Functional Requirements
 
-# APONTAUA
-
-# NON-FUNCTIONAL REQUIREMENTS
-
-**Version:** 2.0\
-**Project:** ApontaUA — Academic Document Management System\
-**Academic Year:** 2026/2027\
-**Status:** Updated Working Version\
-**Institution:** University of Aveiro — DETI
+**Project:** ApontaUA  
+**Institution:** University of Aveiro — DETI  
+**Version:** 1.3
 
 ---
-
-# Document Control
-
-| Field                      | Description                               |
-| -------------------------- | ----------------------------------------- |
-| Document                   | Non-Functional Requirements Specification |
-| Version                    | 2.0                                       |
-| Previous version           | 1.0 — Working Draft                       |
-| Project                    | ApontaUA                                  |
-| Backend                    | FastAPI — Modular Monolith                |
-| Frontend                   | React + Vite                              |
-| Main Database              | PostgreSQL                                |
-| Reverse Proxy / Web Server | NGINX                                     |
-| SSL Certificate Management | Certbot                                   |
-| Authentication Integration | WSO2 / University of Aveiro IdP           |
-| Email Infrastructure       | Exim SMTP / mail.ua.pt                    |
-| Deployment Environment     | IT Provided Host                          |
 
 ## 1. Purpose and Scope
 
@@ -342,4 +319,4 @@ The following constraints establish the architectural baseline for the MVP:
 
 **End of Document**
 
-**Version 2.0 — Working Version for Team and Supervisor Review**
+**Version 1.3**
