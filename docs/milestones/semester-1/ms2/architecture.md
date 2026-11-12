@@ -13,9 +13,11 @@ The Architecture Decision Report proposes a **modular monolith**: one FastAPI ba
 
 <Diagram
   src="/ms2/architecture-diagram.png"
-  alt="MS2 system architecture proposal showing the frontend, FastAPI backend, PostgreSQL, Keycloak, file storage, and conditional or future services"
+  alt="MS2 system architecture proposal showing the frontend, FastAPI backend, PostgreSQL, WSO2 with the University of Aveiro IdP, file storage, and conditional or future services"
   caption="Architecture figure extracted from the supplied MS2 Architecture Decision Report; dashed components are marked future or optional in that report."
 />
+
+> **Updated architectural direction (MS3):** WSO2 integrated with the University of Aveiro IdP replaces the earlier Keycloak proposal. This is the target architecture; the team must request the required access token from STIC through the supervisor, as recorded in Minute 05; OIDC is intended, with technical setup following STIC guidance. The local implementation does not yet demonstrate an operational integration. The original MS2 report remains available as a historical source and is superseded on this point.
 
 ## Frontend
 
@@ -37,8 +39,8 @@ The Architecture Decision Report proposes a **modular monolith**: one FastAPI ba
 
 ## Authentication
 
-- **Keycloak with OpenID Connect (OIDC)** is the proposed identity provider for the initial phase. FastAPI validates the access token and applies application permissions.
-- **University of Aveiro institutional authentication** is deferred to a later phase and depends on confirmation of the supported protocol and access conditions. It is not guaranteed by the MS2 design.
+- **WSO2 integrated with the University of Aveiro IdP** is the current architectural direction. The internal ApontaUA identifier remains permanent and independent of the external identity; ApontaUA manages application roles and permissions.
+- The team must request an access token from STIC through the supervisor. OIDC is intended, but endpoints, claims and session configuration follow STIC guidance. The integration is not yet evidenced as operational.
 
 ## Processing and search
 
@@ -57,6 +59,6 @@ The Architecture Decision Report proposes a **modular monolith**: one FastAPI ba
 
 ## Deployment and open decisions
 
-The report proposes Docker Compose for local integration of the frontend, API, PostgreSQL and Keycloak. Add Redis and a Python worker only if asynchronous processing is in MVP scope. Production hosting, upload limits, exact format support, backup objectives, search acceptance criteria and the scope of OCR all remain to be confirmed.
+The report proposes Docker Compose for local integration of the frontend, API and PostgreSQL. Add Redis and a Python worker only if asynchronous processing is in MVP scope. Production hosting, upload limits, exact format support, backup objectives, search acceptance criteria and the scope of OCR all remain to be confirmed.
 
 <StaticLink to="/ms2/architecture-decision-report.pdf" target="_blank" rel="noopener noreferrer">Open the Architecture Decision Report (PDF)</StaticLink>.

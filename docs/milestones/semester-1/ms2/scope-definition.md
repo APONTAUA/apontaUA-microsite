@@ -8,7 +8,7 @@ sidebar_position: 14
 
 The presentation places the following capabilities in its proposed MVP scope. This is a plan, not a report of completed implementation:
 
-- Keycloak authentication and basic roles.
+- Institutional authentication via WSO2 + UA IdP and basic application roles (target architecture; service operation depends on institutional authorization/configuration).
 - Navigation by course, curricular unit and topic.
 - Upload and search, capturing author, source and licence.
 - Version history, review status and lecturer sign-off.
@@ -18,7 +18,7 @@ The presentation places the following capabilities in its proposed MVP scope. Th
 
 The presentation defers or conditions these items:
 
-- University of Aveiro institutional authentication.
+- Operational integration with the University of Aveiro IdP remains dependent on institutional authorization and configuration; it is not a separate alternative provider.
 - Advanced OCR and evaluation of handwritten content.
 - Celery and Redis, if asynchronous jobs are needed.
 - Elasticsearch, if search evidence justifies it.
