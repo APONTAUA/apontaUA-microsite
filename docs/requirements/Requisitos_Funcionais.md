@@ -1,13 +1,8 @@
-> Consolidação enquadrada pela MS3 e pela arquitetura WSO2 + IdP UA. Mantêm-se os 100 identificadores RF-001…RF-100. As funcionalidades de OCR, extração textual e similaridade estão classificadas como evolução do segundo semestre, fora dos critérios de aceitação do MVP. Os enunciados de origem permanecem em inglês; as clarificações de âmbito são portuguesas.
->
-> **Autenticação:** a equipa deve enviar pedido expresso ao orientador para encaminhamento aos STIC e solicitar o token de permissão necessário. A Minuta 05 regista esta ação como por fazer. A equipa espera obter acesso no contexto académico, mas o token e a configuração ainda não constam como obtidos nesta documentação. O protocolo OIDC é o pretendido na análise de riscos; endpoints, atributos e sessão aguardam confirmação dos STIC.
-
 # ApontaUA — Functional Requirements
 
 **Project:** ApontaUA  
 **Institution:** University of Aveiro — DETI  
-**Version:** 2.0  
-**Status:** Consolidated version for final validation and preparation of business rules.
+**Version:** 1.3  
 
 ---
 

@@ -40,9 +40,8 @@ O guião consultado define três pilares: requisitos legais (RGPD, licenciamento
 3. O âmbito MS3 classifica pesquisa de título/descrição/metadados e hash exato (RF-059/RN-064) como MVP; OCR, extração de texto e similaridade avançada como evolução do semestre 2. Manter essa classificação nos RF/RN/NFR.
 4. Validar retenção, base legal, DPIA, licenças, T&C, eliminação e backups com responsáveis institucionais.
 5. Confirmar GitHub issues/projetos atuais: capturas indicam 0/7 e estados Open/Todo; acesso em tempo real não foi verificado.
-6. Clarificar divergência de nome Marcelo Junior vs Marcelo Lino encontrada noutras minutas.
-7. Definir os parâmetros NFR em aberto: concorrência, volume, latência, disponibilidade, RTO/RPO, limites de upload e compatibilidade.
-8. Criar testes/CI e ligar casos de uso e critérios de aceitação aos IDs canónicos.
+6. Definir os parâmetros NFR em aberto: concorrência, volume, latência, disponibilidade, RTO/RPO, limites de upload e compatibilidade.
+7. Criar testes/CI e ligar casos de uso e critérios de aceitação aos IDs canónicos.
 
 ## Limites desta auditoria
 

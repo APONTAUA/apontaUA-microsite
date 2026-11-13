@@ -19,10 +19,3 @@
 | INC-15 | Qualidade de serviço | NFR v2 | deployment | concorrência, latência, uptime, RTO/RPO ainda sem valores | Não se conseguem aceitar testes operacionais | Definir metas mensuráveis em conjunto com IT | Aprovar targets |
 | INC-16 | Estado de implementação | requisitos / slides | código local | Slides e requisitos descrevem funcionalidades sem módulos correspondentes no starter | Pode induzir a declarar progresso incorreto | Classificar como especificado/planeado, não implementado | Atualizar status a cada entrega |
 | INC-17 | GitHub | capturas Gestão Equipa | estado remoto | Capturas são snapshot antigo, 0/7 e Open/Todo; ruleset não aplicado em plano privado | Processo real não confirmado | Verificar manualmente issues, branch protection e CI | Equipa fornece/verifica acesso atual |
-| INC-18 | Identidade de membro | Minutas | gestão equipa | Marcelo Junior vs Marcelo Lino | Atribuição documental | Preservar nome conforme fonte e reconciliar | Confirmar nome oficial |
-
-## Decisões obrigatórias antes de congelar especificação
-
-- WSO2 + IdP UA é a direção arquitetural mandatória. A Minuta 05 regista a ação de pedir o token aos STIC através do orientador; a equipa espera acesso como projeto académico. OIDC é pretendido; endpoints/atributos/sessão dependem da configuração STIC. O token e a integração ainda não estão documentados como obtidos/implementados.
-- Domínios permitidos, verificação institucional, pesquisa, processamento/OCR, similaridade, papéis, estados, retenção e parâmetros operacionais continuam sem decisão consolidada.
-- Não usar a matriz como prova de testes: não foram encontrados testes automatizados no repositório auditado.
