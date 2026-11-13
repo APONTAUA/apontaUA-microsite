@@ -10,13 +10,13 @@ function GitHubIcon() {
 	);
 }
 
-export default function TeamCard({ name, role, href, image }) {
+export default function TeamCard({ name, role, href, image, imagePosition }) {
 	const imageUrl = image ? useBaseUrl(image) : undefined;
 	const initials = name.split(/\s+/).slice(0, 2).map((part) => part[0]).join('').toUpperCase();
 	return (
 		<article className={styles.card}>
 			<div className={styles.avatarFrame}>
-				{imageUrl ? <img className={styles.avatar} src={imageUrl} alt={`${name} profile`} loading="lazy" /> :
+				{imageUrl ? <img className={styles.avatar} src={imageUrl} alt={`${name} profile`} style={imagePosition ? { objectPosition: imagePosition } : undefined} loading="lazy" /> :
 					<span className={`${styles.avatar} ${styles.fallback}`} aria-hidden="true">{initials}</span>}
 			</div>
 			<div className={styles.content}>
